@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class WaypointSystem : MonoBehaviour {
+public class RenameWaypointSystem : MonoBehaviour {
 	public bool isLoop = false;
 
 
@@ -12,8 +12,8 @@ public class WaypointSystem : MonoBehaviour {
 		Vector3 firstPosition = transform.GetChild(0).position;
 		Vector3 previousPosition = firstPosition;
 
-		Waypoint[] waypoints = GetComponentsInChildren<Waypoint>();
-		foreach (Waypoint waypoint in waypoints)
+		RenameWaypoint[] waypoints = GetComponentsInChildren<RenameWaypoint>();
+		foreach (RenameWaypoint waypoint in waypoints)
 		{
 			Gizmos.DrawSphere(waypoint.transform.position, .2f);
 			Gizmos.DrawLine(previousPosition, waypoint.transform.position);

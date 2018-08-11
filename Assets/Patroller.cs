@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Patroller : MonoBehaviour {
 
-	[SerializeField] WaypointSystem patrolPath;
+	[SerializeField] RenameWaypointSystem patrolPath;
     [SerializeField] float waypointTolerance = 0.1f;
 	[SerializeField] float waypointDwellTime = 1f;
 	[SerializeField] float moveSpeed = 10f;
