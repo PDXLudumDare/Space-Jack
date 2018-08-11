@@ -34,7 +34,6 @@ public class CrewAI : MonoBehaviour
     {
         Move();
         CreateDesire();
-        
     }
 
     private void CreateDesire()
@@ -61,14 +60,11 @@ public class CrewAI : MonoBehaviour
 
     private void Move()
     {
-        print(nextMovementTime);
         if (Time.time - timeSinceMoved > nextMovementTime)
         {
             timeSinceMoved = 0; //Wait for a little bit
             Waypoint waypoint = GetRandomWaypoint();
-            print(name + " GO TO " + waypoint);
             seeker = GetComponent<Seeker>();
-            print(seeker);
             seeker.StartPath(transform.position, waypoint.transform.position, OnPathComplete);
         }
     }
