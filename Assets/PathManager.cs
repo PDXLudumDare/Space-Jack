@@ -8,18 +8,18 @@ public class PathManager : MonoBehaviour
 
 	public float walk_speed = 5.0f;
 
-	private Stack<Vector2> current_path;
+	private Stack<Vector3> current_path;
 
-	private Vector2 current_waypoint_position;
+	private Vector3 current_waypoint_position;
 
 	private float move_time_total;
 
 	private float move_time_current;
 
-	public void NavigateTo(Vector2 destination)
+	public void NavigateTo(Vector3 destination)
 	{
 		// find closest waypoint to current position and destination position
-		current_path = new Stack<Vector2>();
+		current_path = new Stack<Vector3>();
 		var current_node = FindClosestWaypoint(transform.position);
 		var end_node = FindClosestWaypoint(destination);
 		if (current_node == null || end_node == null || current_node == end_node)
@@ -89,7 +89,7 @@ public class PathManager : MonoBehaviour
 				move_time_current += Time.deltaTime;
 				if (move_time_current > move_time_total)
 					move_time_current = move_time_total;
-				transform.position = Vector2.Lerp(current_waypoint_position, current_path.Peek(),
+				transform.position = Vector3.Lerp(current_waypoint_position, current_path.Peek(),
 					move_time_current / move_time_total);
 			}
 			else
@@ -106,7 +106,7 @@ public class PathManager : MonoBehaviour
 		}
 	}
 
-	private Waypoint FindClosestWaypoint(Vector2 target)
+	private Waypoint FindClosestWaypoint(Vector3 target)
 	{
 		GameObject closest = null;
 		float closest_dist = Mathf.Infinity;
