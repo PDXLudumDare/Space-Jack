@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using FarrokhGames.Inventory;
 using UnityEngine;
 
 public class DesireSystem : MonoBehaviour {
@@ -53,5 +54,10 @@ public class DesireSystem : MonoBehaviour {
 			Destroy(currentEmote.gameObject, .1f);
 		}
         
+    }
+
+    public void GetItem(IInventoryItem item)
+    {
+        print(name + " RECEIVED ITEM: " + item.Name);
     }
 }

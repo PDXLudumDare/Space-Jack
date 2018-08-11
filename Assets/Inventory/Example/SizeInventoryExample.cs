@@ -41,6 +41,16 @@ namespace FarrokhGames.Inventory.Examples
             inventory.OnItemDropped += (item) =>
             {
                 Debug.Log(item.Name + " was dropped on the ground");
+                var dropPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                print(dropPosition);
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (!hit){ return; }
+                DesireSystem crewMember = hit.collider.GetComponent<DesireSystem>();
+                if(crewMember != null)
+                {
+                    Debug.Log ("Target: " + crewMember);
+                    crewMember.GetItem(item);
+                }
             };
         }
     }

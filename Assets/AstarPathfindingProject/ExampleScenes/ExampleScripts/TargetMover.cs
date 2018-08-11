@@ -32,44 +32,10 @@ namespace Pathfinding {
 			useGUILayout = false;
 		}
 
-		public void OnGUI () {
-			if (onlyOnDoubleClick && cam != null && Event.current.type == EventType.MouseDown && Event.current.clickCount == 2) {
-				UpdateTargetPosition();
-			}
-		}
-
-		/** Update is called once per frame */
-		void Update () {
-			if (!onlyOnDoubleClick && cam != null) {
-				UpdateTargetPosition();
-			}
-		}
-
-		public void UpdateTargetPosition () {
-			Vector3 newPosition = Vector3.zero;
-			bool positionFound = false;
-
-			if (use2D) {
-				newPosition = cam.ScreenToWorldPoint(Input.mousePosition);
-				newPosition.z = 0;
-				positionFound = true;
-			} else {
-				// Fire a ray through the scene at the mouse position and place the target where it hits
-				RaycastHit hit;
-				if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask)) {
-					newPosition = hit.point;
-					positionFound = true;
-				}
-			}
-
-			if (positionFound && newPosition != target.position) {
+		public void SetNewTargetPosition (Vector3 newPosition) {
+			
+			if (newPosition != target.position) {
 				target.position = newPosition;
-
-				if (onlyOnDoubleClick) {
-					for (int i = 0; i < ais.Length; i++) {
-						if (ais[i] != null) ais[i].SearchPath();
-					}
-				}
 			}
 		}
 	}
