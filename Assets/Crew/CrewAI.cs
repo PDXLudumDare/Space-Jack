@@ -51,7 +51,7 @@ public class CrewAI : MonoBehaviour
                 {
 					timeSinceDesireCreated = Time.time;
 					desireSystem.LoseDesire();
-                    //TODO Run this when a desire is given
+                    //TODO Run this when a desire is granted
                     nextDesireTime = UnityEngine.Random.Range(nextDesireTimeRange.x, nextDesireTimeRange.y);
                 }
             }
