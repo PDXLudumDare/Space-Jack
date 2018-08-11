@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3788778733
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Walls
+    uniqueID: 3796554605
+    locked: 0
+  - name: Crew
+    uniqueID: 436531089
+    locked: 0
+  - name: Emote
+    uniqueID: 761657841
+    locked: 0
+  - name: Item
+    uniqueID: 749785755
     locked: 0
