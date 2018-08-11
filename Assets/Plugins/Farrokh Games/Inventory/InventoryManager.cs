@@ -111,12 +111,13 @@ namespace FarrokhGames.Inventory
         /// Add given item to the inventory
         /// </summary>
         /// <param name="item">Item to add</param>
-        public void Add(IInventoryItem item)
+        public bool Add(IInventoryItem item)
         {
-            if (!CanAdd(item)) return;
+            if (!CanAdd(item)) return false;
             var freePoint = GetFirstPointThatFitsItem(item);
-            if (freePoint.x == -1) return;
+            if (freePoint.x == -1) return false;
             AddAt(item, freePoint);
+            return true;
         }
 
         /// <summary>

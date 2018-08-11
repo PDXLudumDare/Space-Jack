@@ -9,6 +9,8 @@ public class ConveyerBelt : MonoBehaviour {
 	[SerializeField] private ItemDefinition[] itemsToSpawn;
 	[SerializeField] Vector2 timebetweenSpawnRange = new Vector2(1, 30f);
 
+	public InventoryCreator dropPort;
+
 	float nextSpawnTime;
 	float timeSinceLastSpawn;
 
@@ -36,6 +38,11 @@ public class ConveyerBelt : MonoBehaviour {
 				ItemDefinition item = GetRandomItem();
 				GameObject newItem = new GameObject();
 				Image newItemImage = newItem.AddComponent<Image>();
+				newItem.AddComponent<Item>().item = item;
+				ConveyerController controller = newItem.AddComponent<ConveyerController>();
+				controller.dropPort = dropPort;
+				Button button = slot.GetComponent<Button>();
+				button.onClick.AddListener(controller.OnClick);
 				newItemImage.sprite = item.Sprite;
 				newItemImage.transform.SetParent(slot.transform); 
 				return;
@@ -49,9 +56,8 @@ public class ConveyerBelt : MonoBehaviour {
 		print("Conveyer belt clogged! Destroying all items!");
 		foreach (GridLayoutGroup slot in itemSlots) {
 			foreach(Transform child in slot.transform){
-				print(child.gameObject.name);
 				child.SetParent(null);
-				Destroy(child);
+				Destroy(child.gameObject);
 			}
 		}
 
