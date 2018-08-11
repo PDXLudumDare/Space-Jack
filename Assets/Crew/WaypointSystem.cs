@@ -18,9 +18,7 @@ public class WaypointSystem : MonoBehaviour {
 			Gizmos.DrawSphere(waypoint.transform.position, .2f);
 			Gizmos.DrawLine(previousPosition, waypoint.transform.position);
 			previousPosition = waypoint.transform.position;
-			if (waypoint.connectedWaypoint){
-				Gizmos.DrawLine(waypoint.transform.position, waypoint.connectedWaypoint.transform.position);
-			}
+			
 		}
 		if (isLoop){
 			Gizmos.DrawLine(previousPosition, firstPosition);
