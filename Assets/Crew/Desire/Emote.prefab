@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4895799860066214}
   - component: {fileID: 212176772208710888}
+  - component: {fileID: 114752826986479038}
   m_Layer: 0
   m_Name: Emote Item
   m_TagString: Untagged
@@ -66,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1357370868260454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.04, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4335912333689638}
   m_RootOrder: 0
@@ -83,6 +84,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emoteIcon: {fileID: 1357370868260454}
+--- !u!114 &114752826986479038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357370868260454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f57226280258dd4397397bec4ba30d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWidth: 1
+  maxHeight: 1
 --- !u!212 &212176772208710888
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FarrokhGames.Inventory;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(InventoryRenderer))]
 public class InventoryCreator : MonoBehaviour
@@ -9,26 +10,12 @@ public class InventoryCreator : MonoBehaviour
     [SerializeField] private ItemDefinition[] _definitions;
     [SerializeField] private bool _fillEmpty = false; // Should the inventory get completely filled?
 
+    InventoryManager inventory;
+
     void Start()
     {
         // Create inventory
-        var inventory = new InventoryManager(_width, _height);
-
-        // Fill inventory with random items
-        var tries = (_width * _height) / 3;
-        for (var i = 0; i < tries; i++)
-        {
-            inventory.Add(_definitions[Random.Range(0, _definitions.Length)].CreateInstance());
-        }
-
-        // Fill empty slots with first (1x1) item
-        if (_fillEmpty)
-        {
-            for (var i = 0; i < _width * _height; i++)
-            {
-                inventory.Add(_definitions[0].CreateInstance());
-            }
-        }
+        inventory = new InventoryManager(_width, _height);
 
         // Sets the renderers's inventory to trigger drawing
         GetComponent<InventoryRenderer>().SetInventory(inventory);
@@ -36,16 +23,24 @@ public class InventoryCreator : MonoBehaviour
         // Log items being dropped on the ground
         inventory.OnItemDropped += (item) =>
         {
-            var dropPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            print(dropPosition);
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (!hit){ return; }
-            DesireSystem crewMember = hit.collider.GetComponent<DesireSystem>();
-            if(crewMember != null)
-            {
-                Debug.Log ("Target: " + crewMember);
-                crewMember.GetItem(item);
-            }
+            DropItem(item);
         };
+    }
+
+    private static void DropItem(IInventoryItem item)
+    {
+        var dropPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (!hit) { return; }
+        DesireSystem crewMemberDesire = hit.collider.GetComponent<DesireSystem>();
+        if (crewMemberDesire != null)
+        {
+            crewMemberDesire.GetItem(item);
+        }
+    }
+
+    public bool AutoAddItem(ItemDefinition newItem){
+        IInventoryItem item = newItem.CreateInstance();
+        return inventory.Add(item);
     }
 }

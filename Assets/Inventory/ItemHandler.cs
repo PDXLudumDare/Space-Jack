@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ItemHandler : MonoBehaviour {
 
-	public Item[] availableItems;
+	public IInventoryItem[] availableItems;
 }
