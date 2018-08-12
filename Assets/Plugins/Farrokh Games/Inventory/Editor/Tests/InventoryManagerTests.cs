@@ -18,7 +18,7 @@ namespace FarrokhGames.Inventory
                     shape[x, y] = true;
                 }
             }
-            return new TestItem("item", null, new InventoryShape(shape));
+            return new TestItem("item", null, new InventoryShape(shape), 0);
         }
 
         /*

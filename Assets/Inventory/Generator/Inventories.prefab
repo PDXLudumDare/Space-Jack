@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellSize: {x: 40, y: 40}
+  imageSizeScale: 1
   _cellSpriteEmpty: {fileID: 21300012, guid: 4f666dd4618814d2f8c5a2599cd224c7, type: 3}
   _cellSpriteSelected: {fileID: 21300014, guid: 4f666dd4618814d2f8c5a2599cd224c7,
     type: 3}
@@ -165,9 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 8
   _height: 4
-  _definitions:
-  - {fileID: 11400000, guid: 38ca7622b39ebfa4fa9bf09956532275, type: 2}
-  - {fileID: 11400000, guid: ee1dc4275a272994896f17386cf7007b, type: 2}
+  _definitions: []
   _fillEmpty: 0
 --- !u!222 &222460165918563968
 CanvasRenderer:
