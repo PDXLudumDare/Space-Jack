@@ -9,6 +9,7 @@ public class CrewSpawner : MonoBehaviour {
 	public float timeBetweenSpawns = 30f;
 
 	public GameObject crewPrefab;
+	public AudioClip beamSound;
 
 	public Sprite[] possibleHair;
 	public Sprite[] possibleHead;
