@@ -79,7 +79,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.012812138, y: 0}
-  m_Size: {x: 0.6723194, y: 0.6870811}
+  m_Size: {x: 1.423831, y: 1.423831}
   m_Direction: 0
 --- !u!114 &114245229916442330
 MonoBehaviour:
@@ -95,6 +95,7 @@ MonoBehaviour:
   nextMovementTimeRange: {x: 5, y: 30}
   nextDesireTimeRange: {x: 15, y: 30}
   desireLifeSpan: 10
+  waypointDestination: {fileID: 0}
 --- !u!114 &114339092724292910
 MonoBehaviour:
   m_ObjectHideFlags: 1

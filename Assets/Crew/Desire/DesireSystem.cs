@@ -35,7 +35,7 @@ public class DesireSystem : MonoBehaviour {
 		StartCoroutine(ActivateTempBubble(angryIcon));
 	}
             
-    public void FulfillDesire(){
+    public void FulfillDesire(int reward = 1){
         status.ChangeSecurityPoints(securityGain);
         currentDesire = null;
         DestroyCurrentEmote();
@@ -71,7 +71,7 @@ public class DesireSystem : MonoBehaviour {
         if (item == null) { return; }
         if (currentDesire != null && currentDesire.Name == item.Name){
             print("HAPPY!");
-            FulfillDesire();
+            FulfillDesire(item.Points);
         }else{
             print("SAD...");
             LoseDesire();
