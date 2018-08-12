@@ -11,6 +11,8 @@ public class CrewAI : MonoBehaviour
     [SerializeField] Vector2 nextDesireTimeRange = new Vector2(3f, 30f);
     [SerializeField] float desireLifeSpan = 15f;
 
+    public Waypoint waypointDestination;
+
     float nextMovementTime;
     float nextDesireTime;
     float timeSinceMoved;
@@ -63,9 +65,9 @@ public class CrewAI : MonoBehaviour
         if (Time.time - timeSinceMoved > nextMovementTime)
         {
             timeSinceMoved = 0; //Wait for a little bit
-            Waypoint waypoint = GetRandomWaypoint();
+            waypointDestination = GetRandomUnclaimedWaypoint();
             seeker = GetComponent<Seeker>();
-            seeker.StartPath(transform.position, waypoint.transform.position, OnPathComplete);
+            seeker.StartPath(transform.position, waypointDestination.transform.position, OnPathComplete);
         }
     }
 
@@ -77,30 +79,28 @@ public class CrewAI : MonoBehaviour
         nextMovementTime = UnityEngine.Random.Range(nextMovementTimeRange.x, nextMovementTimeRange.y);
     }
 
-    private Waypoint GetRandomWaypoint()
+    private Waypoint GetRandomUnclaimedWaypoint()
     {
-        Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
-        if (waypoints.Length > 0){
-            return waypoints[UnityEngine.Random.Range(0, waypoints.Length)];
+        List<Waypoint> waypoints = new List<Waypoint>(FindObjectsOfType<Waypoint>());
+        List<CrewAI> crewMembers = new List<CrewAI>(FindObjectsOfType<CrewAI>());
+        
+        crewMembers.Remove(this);
+        List<Waypoint> waypointsToRemove = new List<Waypoint>();
+        foreach(CrewAI crewMember in crewMembers){
+            foreach(Waypoint waypoint in waypoints){
+                if (crewMember.waypointDestination == waypoint){
+                    waypointsToRemove.Add(waypoint);
+                }
+            }
+            
+        }
+        foreach (Waypoint waypointToRemove in waypointsToRemove){
+            waypoints.Remove(waypointToRemove);
+        }
+        if (waypoints.Count > 0){
+            return waypoints[UnityEngine.Random.Range(0, waypoints.Count)];
         }
         Debug.LogError("No waypoints found");
         return null;
-    }
-
-    Waypoint GetNearestWaypoint()
-    {
-        Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
-        Waypoint nearestWaypoint = null;
-        float nearestWaypointDistance = Mathf.Infinity;
-        foreach (Waypoint waypoint in waypoints)
-        {
-            float distanceToWaypoint = (waypoint.transform.position - transform.position).magnitude;
-            if (distanceToWaypoint < nearestWaypointDistance)
-            {
-                nearestWaypoint = waypoint;
-                nearestWaypointDistance = distanceToWaypoint;
-            }
-        }
-        return nearestWaypoint;
     }
 }

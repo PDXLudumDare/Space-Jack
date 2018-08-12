@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212821838104518888}
   - component: {fileID: 50735322367276842}
   - component: {fileID: 70914959845016004}
-  - component: {fileID: 114484786587432574}
   - component: {fileID: 114245229916442330}
   - component: {fileID: 114339092724292910}
   - component: {fileID: 114803431825157992}
@@ -40,8 +39,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506689643038944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.44, y: 1.05, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.178087, y: 1.8308985, z: 0.091796875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMovementTimeRange: {x: 5, y: 30}
-  nextDesireTimeRange: {x: 15, y: 120}
+  nextDesireTimeRange: {x: 15, y: 30}
   desireLifeSpan: 10
 --- !u!114 &114339092724292910
 MonoBehaviour:
@@ -112,7 +111,8 @@ MonoBehaviour:
   happyIcon: {fileID: 21300000, guid: 75c1ac8e652f0444a89655fbeced4993, type: 3}
   angryIcon: {fileID: 21300000, guid: 33eaa9c18de8cab45a2b6a7a1c2b87bd, type: 3}
   destroyEmoteTime: 3
-  currentDesire: {fileID: 0}
+  securityCost: 5
+  securityGain: 10
 --- !u!114 &114370057875697074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,19 +139,6 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask: -1
---- !u!114 &114484786587432574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506689643038944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1282a0a4f77c6468a3e19a4d1d55e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWaypoint: {fileID: 0}
-  waypointDistanceThreshold: 0.1
 --- !u!114 &114803431825157992
 MonoBehaviour:
   m_ObjectHideFlags: 1
