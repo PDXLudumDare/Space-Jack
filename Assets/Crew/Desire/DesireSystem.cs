@@ -6,10 +6,14 @@ using FarrokhGames.Inventory;
 
 
 public class DesireSystem : MonoBehaviour {
-	[SerializeField] Emote emoteBubble;
+    [SerializeField] Color hoverColor;
+ 	[SerializeField] Emote emoteBubbleDefault;
+    [SerializeField] Emote emoteBubbleMad;
+    [SerializeField] Emote emoteBubbleHappy;
 	[SerializeField] Sprite happyIcon;
 	[SerializeField] Sprite angryIcon;
 	[SerializeField] float destroyEmoteTime = 3f;
+    [SerializeField] Vector3 emoteOffset;
 
 	public IInventoryItem currentDesire;
 
@@ -24,34 +28,34 @@ public class DesireSystem : MonoBehaviour {
     {
         ItemDefinition[] items = FindObjectOfType<ConveyerBelt>().itemsToSpawn;
         currentDesire = ScriptableObject.Instantiate(items[UnityEngine.Random.Range(0, items.Length)]);
-        CreateEmote(currentDesire.Sprite);
+        CreateEmote(currentDesire.Sprite, emoteBubbleDefault);
     }
 
 	public void LoseDesire(int penalty = 1){
         status.ChangeSecurityPoints(-penalty);
 		currentDesire = null;
 		DestroyCurrentEmote();
-		StartCoroutine(ActivateTempBubble(angryIcon));
+		StartCoroutine(ActivateTempBubble(angryIcon, emoteBubbleMad));
 	}
             
     public void FulfillDesire(int reward = 1){
         status.ChangeSecurityPoints(reward);
         currentDesire = null;
         DestroyCurrentEmote();
-		StartCoroutine(ActivateTempBubble(happyIcon));
+		StartCoroutine(ActivateTempBubble(happyIcon, emoteBubbleHappy));
 	}
 
-    private Emote CreateEmote(Sprite emoteSprite)
+    private Emote CreateEmote(Sprite emoteSprite, Emote emoteBubble)
     {
-        GameObject emoteObj = Instantiate(emoteBubble.gameObject, transform);
+        GameObject emoteObj = Instantiate(emoteBubble.gameObject, transform.position + emoteOffset, Quaternion.identity, transform);
         currentEmote = emoteObj.GetComponent<Emote>();
         currentEmote.SetEmoteIcon(emoteSprite);
         return currentEmote;
     }
 
-    private IEnumerator ActivateTempBubble(Sprite icon)
+    private IEnumerator ActivateTempBubble(Sprite icon, Emote emoteBubble)
     {
-        Emote tempEmote = CreateEmote(icon);
+        Emote tempEmote = CreateEmote(icon, emoteBubble);
 		yield return new WaitForSecondsRealtime(destroyEmoteTime);
 		Destroy(tempEmote.gameObject, .1f);
 		
@@ -69,10 +73,8 @@ public class DesireSystem : MonoBehaviour {
     {
         if (item == null) { return; }
         if (currentDesire != null && currentDesire.Name == item.Name){
-            print("HAPPY!");
             FulfillDesire();
         }else{
-            print("SAD...");
             LoseDesire();
         }
     }
@@ -80,7 +82,7 @@ public class DesireSystem : MonoBehaviour {
     void OnMouseOver()
     {
         foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()){
-            renderer.color = Color.red;
+            renderer.color = hoverColor;
         }
     }
 

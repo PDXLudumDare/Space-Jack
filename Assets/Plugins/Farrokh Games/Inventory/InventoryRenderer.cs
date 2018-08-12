@@ -15,6 +15,8 @@ namespace FarrokhGames.Inventory
         [SerializeField, Tooltip("The size of the cells building up the inventory")]
         private Vector2Int _cellSize = new Vector2Int(32, 32);
 
+        [SerializeField] float imageSizeScale = 1f;
+
         [SerializeField, Tooltip("The sprite to use for empty cells")]
         private Sprite _cellSpriteEmpty;
 
@@ -23,6 +25,8 @@ namespace FarrokhGames.Inventory
 
         [SerializeField, Tooltip("The sprite to use for blocked cells")]
         private Sprite _cellSpriteBlocked;
+
+        
 
         internal InventoryManager _inventory = null;
         private bool _haveListeners = false;
@@ -226,7 +230,7 @@ namespace FarrokhGames.Inventory
             var img = _imagePool.Take();
             img.gameObject.SetActive(true);
             img.sprite = sprite;
-            img.rectTransform.sizeDelta = new Vector2(img.sprite.rect.width, img.sprite.rect.height);
+            img.rectTransform.sizeDelta = new Vector2(img.sprite.rect.width * imageSizeScale, img.sprite.rect.height * imageSizeScale);
             img.transform.SetAsLastSibling();
             img.type = Image.Type.Simple;
             img.raycastTarget = raycastTarget;

@@ -14,6 +14,7 @@ namespace FarrokhGames.Inventory
         IPointerDownHandler, IBeginDragHandler, IDragHandler,
         IEndDragHandler, IPointerExitHandler, IPointerEnterHandler
         {
+            
             // The dragged item is static and shared by all controllers
             // This way items can be moved between controllers easily
             private static DraggedItem _draggedItem = null;
@@ -151,6 +152,10 @@ namespace FarrokhGames.Inventory
             /// </summary>
             public class DraggedItem
             {
+
+                public float dragImageTransparency = .75f;
+                public float imageScale = .75f;
+
                 /// <summary>
                 /// Returns the InventoryController this item originated from
                 /// </summary>
@@ -198,8 +203,8 @@ namespace FarrokhGames.Inventory
                     _image.raycastTarget = false;
                     _image.transform.SetParent(originalController.gameObject.GetComponentInParent<Canvas>().transform);
                     _image.transform.SetAsLastSibling();
-                    _image.transform.localScale = Vector3.one;
-                    _image.color = new Color(1f,1f,1f,.5f);
+                    _image.transform.localScale = new Vector3(imageScale, imageScale, 1);//Vector3.one;
+                    _image.color = new Color(1f,1f,1f,dragImageTransparency);
                     _image.sprite = item.Sprite;
                     _image.SetNativeSize();
                 }

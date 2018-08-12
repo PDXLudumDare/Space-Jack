@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e9099dba1c24dcda700fa19b64a47b, type: 3}
   m_Name: Ham
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 35877552ca0b11a4c8bb654969f7f50e, type: 3}
+  _sprite: {fileID: 21300000, guid: 49dccd8590e61aa42b37a8dd04f86b3f, type: 3}
   _shape:
     _width: 2
     _height: 2
-    _shape: 01000101
+    _shape: 00010101
   points: 5
