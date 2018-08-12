@@ -49,6 +49,9 @@ TagManager:
   - name: Walls
     uniqueID: 3796554605
     locked: 0
+  - name: Decoration
+    uniqueID: 2953377011
+    locked: 0
   - name: Crew
     uniqueID: 436531089
     locked: 0
@@ -57,4 +60,7 @@ TagManager:
     locked: 0
   - name: Item
     uniqueID: 749785755
+    locked: 0
+  - name: Teleport
+    uniqueID: 2788861597
     locked: 0

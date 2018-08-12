@@ -29,13 +29,14 @@ public class CrewSpawner : MonoBehaviour {
         {
             timeSinceLastSpawn = Time.time;
 			Waypoint waypoint = GetRandomWaypoint();
-			SpawnCrewMember(waypoint.transform.position);
+			if (FindObjectsOfType<CrewAI>().Length < maxCrewSpawn){
+				SpawnCrewMember(waypoint.transform.position);
+			}
 		}
 	}
 
     private void SpawnCrewMember(Vector3 position)
     {
-        if (FindObjectsOfType<CrewAI>().Length > maxCrewSpawn){ return; }
 		GameObject newCrewMemberObject = Instantiate(crewPrefab, position, Quaternion.identity, transform);
 		newCrewMemberObject.GetComponentInChildren<HairRenderer>().GetComponent<SpriteRenderer>().sprite = 
 			possibleHair[UnityEngine.Random.Range(0, possibleHair.Length)];
