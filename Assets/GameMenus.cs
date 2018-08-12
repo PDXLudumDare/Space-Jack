@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameMenus : MonoBehaviour {
 	
-	int menuIndex = 0;
+	[SerializeField] int menuIndex = 0;
+	[SerializeField] int creditsIndex = 0;
+	[SerializeField] int firstLevelIndex = 0;
+
 	int buildIndex;
 
 	void Start(){
@@ -15,7 +18,7 @@ public class GameMenus : MonoBehaviour {
 	public void NextLevel(){
 		
 		int nextBuildIndex = buildIndex + 1;
-		if (nextBuildIndex <= SceneManager.sceneCountInBuildSettings){
+		if (nextBuildIndex < SceneManager.sceneCountInBuildSettings){
 			Time.timeScale = 1f;
 			SceneManager.LoadScene(buildIndex + 1);
 		}else{
@@ -32,5 +35,13 @@ public class GameMenus : MonoBehaviour {
 	public void LoadMainMenu(){
 		Time.timeScale = 1f;
 		SceneManager.LoadScene(menuIndex);
+	}
+
+	public void LoadCredits(){
+		print("LOAD CREDITS");
+	}
+
+	public void ToggleVolumen(){
+		print("TOGGLE VOLUME");
 	}
 }
