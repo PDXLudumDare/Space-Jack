@@ -255,6 +255,7 @@ public class NameGeneration
         "gwennifer",
         "gwencesca",
         "gwenelope",
+        "human"
     };
 
     readonly List<List<string>> lastNames = new List<List<string>>()
