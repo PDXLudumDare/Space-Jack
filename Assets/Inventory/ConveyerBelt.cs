@@ -6,7 +6,8 @@ using FarrokhGames.Inventory;
 using System;
 
 public class ConveyerBelt : MonoBehaviour {
-	[SerializeField] private ItemDefinition[] itemsToSpawn;
+	[SerializeField] int costOfDestroyedItems = 15;
+	public ItemDefinition[] itemsToSpawn;
 	[SerializeField] Vector2 timebetweenSpawnRange = new Vector2(1, 30f);
 
 	public InventoryCreator dropPort;
@@ -16,7 +17,10 @@ public class ConveyerBelt : MonoBehaviour {
 
 	List<GridLayoutGroup> itemSlots;
 	
+	PlayerStatus status;
+
 	void Start(){
+		status = FindObjectOfType<PlayerStatus>();
 		itemSlots = new List<GridLayoutGroup>(GetComponentsInChildren<GridLayoutGroup>());
 		itemSlots.Remove(GetComponent<GridLayoutGroup>()); //Because Unity is stupid sometimes
 		nextSpawnTime = UnityEngine.Random.Range(timebetweenSpawnRange.x, timebetweenSpawnRange.y);
@@ -54,6 +58,7 @@ public class ConveyerBelt : MonoBehaviour {
     private void DestroyAllSlots()
     {
 		print("Conveyer belt clogged! Destroying all items!");
+		status.ChangeSecurityPoints(-costOfDestroyedItems);
 		foreach (GridLayoutGroup slot in itemSlots) {
 			foreach(Transform child in slot.transform){
 				child.SetParent(null);

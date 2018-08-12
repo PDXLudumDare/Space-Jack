@@ -9,42 +9,52 @@ public class DesireSystem : MonoBehaviour {
 	[SerializeField] Sprite happyIcon;
 	[SerializeField] Sprite angryIcon;
 	[SerializeField] float destroyEmoteTime = 3f;
+    [SerializeField] int securityCost = 5;
+    [SerializeField] int securityGain = 10;
 
-	public  Item currentDesire;
+	public IInventoryItem currentDesire;
 
 	Emote currentEmote;
+    PlayerStatus status;
+
+    void Start(){
+        status = FindObjectOfType<PlayerStatus>();
+    }
 
 	public void CreateDesire()
     {
-        Item[] items = FindObjectOfType<ItemHandler>().availableItems;
-        currentDesire = items[UnityEngine.Random.Range(0, items.Length)];
-        CreateEmote(currentDesire.GetComponent<SpriteRenderer>().sprite);
+        ItemDefinition[] items = FindObjectOfType<ConveyerBelt>().itemsToSpawn;
+        currentDesire = ScriptableObject.Instantiate(items[UnityEngine.Random.Range(0, items.Length)]);
+        CreateEmote(currentDesire.Sprite);
     }
 
 	public void LoseDesire(){
+        status.ChangeSecurityPoints(-securityCost);
 		currentDesire = null;
 		DestroyCurrentEmote();
 		StartCoroutine(ActivateTempBubble(angryIcon));
 	}
+            
+    public void FulfillDesire(){
+        status.ChangeSecurityPoints(securityGain);
+        currentDesire = null;
+        DestroyCurrentEmote();
+		StartCoroutine(ActivateTempBubble(happyIcon));
+	}
 
-    private void CreateEmote(Sprite emoteSprite)
+    private Emote CreateEmote(Sprite emoteSprite)
     {
         GameObject emoteObj = Instantiate(emoteBubble.gameObject, transform);
         currentEmote = emoteObj.GetComponent<Emote>();
         currentEmote.SetEmoteIcon(emoteSprite);
+        return currentEmote;
     }
-
-    public void FulfillDesire(Item droppedItem){
-		if (droppedItem == currentDesire){
-			StartCoroutine(ActivateTempBubble(happyIcon));
-		}
-	}
 
     private IEnumerator ActivateTempBubble(Sprite icon)
     {
-        CreateEmote(icon);
+        Emote tempEmote = CreateEmote(icon);
 		yield return new WaitForSecondsRealtime(destroyEmoteTime);
-		DestroyCurrentEmote();
+		Destroy(tempEmote.gameObject, .1f);
 		
     }
 
@@ -58,6 +68,13 @@ public class DesireSystem : MonoBehaviour {
 
     public void GetItem(IInventoryItem item)
     {
-        print(name + " RECEIVED ITEM: " + item.Name);
+        if (item == null) { return; }
+        if (currentDesire != null && currentDesire.Name == item.Name){
+            print("HAPPY!");
+            FulfillDesire();
+        }else{
+            print("SAD...");
+            LoseDesire();
+        }
     }
 }
