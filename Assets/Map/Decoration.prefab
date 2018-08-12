@@ -204,7 +204,7 @@ Tilemap:
       m_IsLooping: 1
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 30b6c2fc42450cd40b6149230e989b94, type: 2}
+    m_Data: {fileID: 11400000, guid: cb2496e1c56e7f54d8f356cc70971243, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ebc0267af7f8626409915ecdcf74b738, type: 2}
   - m_RefCount: 1
@@ -238,6 +238,8 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 3.249353e-34, g: 3.249353e-34, b: 3.249353e-34, a: 3.249353e-34}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
