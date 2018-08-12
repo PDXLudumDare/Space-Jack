@@ -9,17 +9,28 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
+<<<<<<< HEAD
   m_RootGameObject: {fileID: 1916227093142230}
   m_IsPrefabAsset: 1
 --- !u!1 &1916227093142230
+=======
+  m_RootGameObject: {fileID: 1807291994004826}
+  m_IsPrefabAsset: 1
+--- !u!1 &1807291994004826
+>>>>>>> 1cd3f5aba27f14786e7713519be38ea95170bd84
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 4986491756366294}
   - component: {fileID: 114967509467170626}
+=======
+  - component: {fileID: 4770607852629378}
+  - component: {fileID: 114562791170445074}
+>>>>>>> 1cd3f5aba27f14786e7713519be38ea95170bd84
   m_Layer: 0
   m_Name: Waypoint
   m_TagString: Untagged
@@ -27,25 +38,43 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &4986491756366294
+=======
+--- !u!4 &4770607852629378
+>>>>>>> 1cd3f5aba27f14786e7713519be38ea95170bd84
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1916227093142230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.86, y: 3.99, z: 0}
+=======
+  m_GameObject: {fileID: 1807291994004826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.46, y: 3.18, z: 0}
+>>>>>>> 1cd3f5aba27f14786e7713519be38ea95170bd84
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &114967509467170626
+=======
+--- !u!114 &114562791170445074
+>>>>>>> 1cd3f5aba27f14786e7713519be38ea95170bd84
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1916227093142230}
+=======
+  m_GameObject: {fileID: 1807291994004826}
+>>>>>>> 1cd3f5aba27f14786e7713519be38ea95170bd84
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac10ef4e64ba1864195ad86b3d4db3e2, type: 3}
