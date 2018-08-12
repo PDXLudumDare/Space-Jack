@@ -630,25 +630,25 @@ Prefab:
         type: 2}
       propertyPath: itemsToSpawn.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: 248c5d8510b039f42b850a41ae1ecd2b,
+      objectReference: {fileID: 11400000, guid: 8beb2e2d8891cce47bc24b9e24e4b662,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}
       propertyPath: itemsToSpawn.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: 85987b6981f7f9344b2a2e4f1110f1b4,
+      objectReference: {fileID: 11400000, guid: 669f137a2a36cef4b8c9e00f6d6a4cc1,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}
       propertyPath: itemsToSpawn.Array.data[8]
       value: 
-      objectReference: {fileID: 11400000, guid: 1e35e51bdad9fa64cad774aeecc4b7a0,
+      objectReference: {fileID: 11400000, guid: cf977713ede563248a0c89d212b2e45f,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}
       propertyPath: itemsToSpawn.Array.data[9]
       value: 
-      objectReference: {fileID: 11400000, guid: ca5be46ae2ba0714281e8f629c193a0f,
+      objectReference: {fileID: 11400000, guid: f5cba1513312b0e48b9f963d68257069,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}
@@ -660,13 +660,13 @@ Prefab:
         type: 2}
       propertyPath: itemsToSpawn.Array.data[11]
       value: 
-      objectReference: {fileID: 11400000, guid: a685d0cd0f939b84fafafbaa583368dd,
+      objectReference: {fileID: 11400000, guid: 5123ec959fe0ed54f9b664ef573c3ba9,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}
       propertyPath: itemsToSpawn.Array.data[12]
       value: 
-      objectReference: {fileID: 11400000, guid: de591f450c177cb499b4602409f422b2,
+      objectReference: {fileID: 11400000, guid: ca5be46ae2ba0714281e8f629c193a0f,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}
@@ -684,7 +684,7 @@ Prefab:
         type: 2}
       propertyPath: itemsToSpawn.Array.data[15]
       value: 
-      objectReference: {fileID: 11400000, guid: 50d40f54672b4fe41a9364fc351abae2,
+      objectReference: {fileID: 11400000, guid: a5ed3e9bc50164e43bf945e9b4a61782,
         type: 2}
     - target: {fileID: 114490106598911658, guid: f63820bfdb312394a8b10b0a5fcbfec0,
         type: 2}

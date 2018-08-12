@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e9099dba1c24dcda700fa19b64a47b, type: 3}
   m_Name: Skewer
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: a4cccda713522b347aa0979102fc7796, type: 3}
+  _sprite: {fileID: 21300000, guid: 76b89601cbdc5e145869b7f61e7ece30, type: 3}
   _shape:
-    _width: 2
-    _height: 1
+    _width: 1
+    _height: 2
     _shape: 0101

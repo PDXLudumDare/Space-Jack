@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92e9099dba1c24dcda700fa19b64a47b, type: 3}
-  m_Name: Pizza TR
+  m_Name: Wine and Bottle
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: e949aa8e685b4e54cbdff4e34af2db70, type: 3}
+  _sprite: {fileID: 21300000, guid: 625fd0c446eeb1044a3d21642e55f1ab, type: 3}
   _shape:
-    _width: 2
+    _width: 1
     _height: 2
-    _shape: 01000101
+    _shape: 0101
