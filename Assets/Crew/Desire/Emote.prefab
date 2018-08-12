@@ -83,6 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6febd81c55b81e46b067d29649f54f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xOffset: 0
+  yOffset: 1
   emoteIcon: {fileID: 1357370868260454}
 --- !u!114 &114752826986479038
 MonoBehaviour:
