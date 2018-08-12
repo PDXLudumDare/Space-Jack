@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using FarrokhGames.Inventory;
 
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item", order = 1)]
