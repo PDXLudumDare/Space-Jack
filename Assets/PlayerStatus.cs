@@ -79,7 +79,7 @@ public class PlayerStatus : MonoBehaviour {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
     }
-	private void ClosePauseMenu()
+	public void ClosePauseMenu()
     {
 		pauseMenuOpen = false;
         Time.timeScale = 1f;
