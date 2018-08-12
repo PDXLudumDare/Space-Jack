@@ -15,4 +15,5 @@ MonoBehaviour:
   _shape:
     _width: 2
     _height: 3
-    _shape: 010001010001
+    _shape: 00010101
+  points: 0
