@@ -4,8 +4,7 @@ using FarrokhGames.Shared;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FarrokhGames.Inventory
-{
+
     /// <summary>
     /// Renders a given inventory
     /// /// </summary>
@@ -309,4 +308,3 @@ namespace FarrokhGames.Inventory
             return new Vector2(x, y);
         }
     }
-}

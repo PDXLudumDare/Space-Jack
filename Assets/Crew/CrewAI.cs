@@ -64,8 +64,9 @@ public class CrewAI : MonoBehaviour
     {
         if (Time.time - timeSinceMoved > nextMovementTime)
         {
-            timeSinceMoved = 0; //Wait for a little bit
+            timeSinceMoved = Time.time; //Wait for a little bit
             waypointDestination = GetRandomUnclaimedWaypoint();
+            if (!waypointDestination) { return; }
             seeker = GetComponent<Seeker>();
             seeker.StartPath(transform.position, waypointDestination.transform.position, OnPathComplete);
         }

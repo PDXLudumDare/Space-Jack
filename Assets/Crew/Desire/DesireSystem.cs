@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using FarrokhGames.Inventory;
 using UnityEngine;
 
 public class DesireSystem : MonoBehaviour {
@@ -9,8 +8,6 @@ public class DesireSystem : MonoBehaviour {
 	[SerializeField] Sprite happyIcon;
 	[SerializeField] Sprite angryIcon;
 	[SerializeField] float destroyEmoteTime = 3f;
-    [SerializeField] int securityCost = 5;
-    [SerializeField] int securityGain = 10;
 
 	public IInventoryItem currentDesire;
 
@@ -28,15 +25,15 @@ public class DesireSystem : MonoBehaviour {
         CreateEmote(currentDesire.Sprite);
     }
 
-	public void LoseDesire(){
-        status.ChangeSecurityPoints(-securityCost);
+	public void LoseDesire(int penalty = 1){
+        status.ChangeSecurityPoints(-penalty);
 		currentDesire = null;
 		DestroyCurrentEmote();
 		StartCoroutine(ActivateTempBubble(angryIcon));
 	}
             
-    public void FulfillDesire(){
-        status.ChangeSecurityPoints(securityGain);
+    public void FulfillDesire(int reward = 1){
+        status.ChangeSecurityPoints(reward);
         currentDesire = null;
         DestroyCurrentEmote();
 		StartCoroutine(ActivateTempBubble(happyIcon));
@@ -71,10 +68,24 @@ public class DesireSystem : MonoBehaviour {
         if (item == null) { return; }
         if (currentDesire != null && currentDesire.Name == item.Name){
             print("HAPPY!");
-            FulfillDesire();
+            FulfillDesire(item.Points);
         }else{
             print("SAD...");
-            LoseDesire();
+            LoseDesire(item.Points);
+        }
+    }
+
+    void OnMouseOver()
+    {
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()){
+            renderer.color = Color.red;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()){
+            renderer.color = Color.white;
         }
     }
 }
