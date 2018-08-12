@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using FarrokhGames.Inventory;
 using System;
 
 public class ConveyerBelt : MonoBehaviour {

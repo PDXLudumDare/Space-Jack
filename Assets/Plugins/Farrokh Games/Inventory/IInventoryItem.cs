@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public interface IInventoryItem
+namespace FarrokhGames.Inventory
 {
-    string Name { get; }
-    Sprite Sprite { get; }
-    InventoryShape Shape { get; }
+    public interface IInventoryItem
+    {
+        string Name { get; }
+        Sprite Sprite { get; }
+        InventoryShape Shape { get; }
+    }
 }
