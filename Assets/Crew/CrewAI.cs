@@ -52,7 +52,7 @@ public class CrewAI : MonoBehaviour
                 if (Time.time - timeSinceDesireCreated > desireLifeSpan)
                 {
 					timeSinceDesireCreated = Time.time;
-					desireSystem.LoseDesire();
+					desireSystem.LoseDesire(desireSystem.currentDesire.Points);
                     //TODO Run this when a desire is granted
                     nextDesireTime = UnityEngine.Random.Range(nextDesireTimeRange.x, nextDesireTimeRange.y);
                 }

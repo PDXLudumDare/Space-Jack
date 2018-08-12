@@ -71,7 +71,6 @@ public class DesireSystem : MonoBehaviour {
 
     public void GetItem(IInventoryItem item)
     {
-        print(item.Points + " " + item.Name);
         if (item == null) { return; }
         if (currentDesire != null && currentDesire.Name == item.Name){
             FulfillDesire(item.Points);
