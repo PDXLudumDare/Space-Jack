@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506689643038944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.178087, y: 1.8308985, z: 0.091796875}
+  m_LocalPosition: {x: -3.71, y: 2.85, z: 0.091796875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671404818072430}
@@ -212,9 +212,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emoteBubble: {fileID: 114533024656457298, guid: 58f149361f6fdc643bb5c3c3eae3f99d,
     type: 2}
-  happyIcon: {fileID: 21300000, guid: 75c1ac8e652f0444a89655fbeced4993, type: 3}
-  angryIcon: {fileID: 21300000, guid: 33eaa9c18de8cab45a2b6a7a1c2b87bd, type: 3}
+  happyIcon: {fileID: 21300000, guid: 5f4ca388265ab4143ae98c359219e57f, type: 3}
+  angryIcon: {fileID: 21300000, guid: f3e5050d6257e2843b8c4355ce33bc8a, type: 3}
   destroyEmoteTime: 3
+  emoteOffset: {x: 0.5, y: 0.5, z: 0}
 --- !u!114 &114370057875697074
 MonoBehaviour:
   m_ObjectHideFlags: 1

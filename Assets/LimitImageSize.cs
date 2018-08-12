@@ -16,9 +16,7 @@ public class LimitImageSize : MonoBehaviour {
 		transform.localScale = new Vector3(
 			maxWidth /sr.bounds.size.x,
 			maxHeight /sr.bounds.size.y,
-			1);
-		print(sr.bounds.size);
-		
+			1);		
 	}
 	
 }

@@ -101,7 +101,7 @@ public class CrewAI : MonoBehaviour
         if (waypoints.Count > 0){
             return waypoints[UnityEngine.Random.Range(0, waypoints.Count)];
         }
-        Debug.LogError("No waypoints found");
+        Debug.LogWarning("No waypoints found");
         return null;
     }
 }

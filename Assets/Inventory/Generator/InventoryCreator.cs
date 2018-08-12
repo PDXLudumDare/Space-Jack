@@ -40,6 +40,9 @@ public class InventoryCreator : MonoBehaviour
     }
 
     public bool AutoAddItem(ItemDefinition newItem){
+        if (newItem == null){
+            Debug.LogError("Item is missing in conveyer belt!");
+        }
         IInventoryItem item = newItem.CreateInstance();
         return inventory.Add(item);
     }

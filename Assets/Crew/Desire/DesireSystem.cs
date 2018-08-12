@@ -10,6 +10,7 @@ public class DesireSystem : MonoBehaviour {
 	[SerializeField] Sprite happyIcon;
 	[SerializeField] Sprite angryIcon;
 	[SerializeField] float destroyEmoteTime = 3f;
+    [SerializeField] Vector3 emoteOffset;
 
 	public IInventoryItem currentDesire;
 
@@ -43,7 +44,7 @@ public class DesireSystem : MonoBehaviour {
 
     private Emote CreateEmote(Sprite emoteSprite)
     {
-        GameObject emoteObj = Instantiate(emoteBubble.gameObject, transform);
+        GameObject emoteObj = Instantiate(emoteBubble.gameObject, transform.position + emoteOffset, Quaternion.identity, transform);
         currentEmote = emoteObj.GetComponent<Emote>();
         currentEmote.SetEmoteIcon(emoteSprite);
         return currentEmote;
@@ -69,10 +70,8 @@ public class DesireSystem : MonoBehaviour {
     {
         if (item == null) { return; }
         if (currentDesire != null && currentDesire.Name == item.Name){
-            print("HAPPY!");
             FulfillDesire();
         }else{
-            print("SAD...");
             LoseDesire();
         }
     }
