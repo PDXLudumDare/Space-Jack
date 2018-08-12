@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using FarrokhGames.Inventory;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(InventoryRenderer))]

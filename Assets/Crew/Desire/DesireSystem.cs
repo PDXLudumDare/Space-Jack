@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using FarrokhGames.Inventory;
 using UnityEngine;
 
 public class DesireSystem : MonoBehaviour {
@@ -73,6 +72,20 @@ public class DesireSystem : MonoBehaviour {
         }else{
             print("SAD...");
             LoseDesire(item.Points);
+        }
+    }
+
+    void OnMouseOver()
+    {
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()){
+            renderer.color = Color.red;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()){
+            renderer.color = Color.white;
         }
     }
 }
