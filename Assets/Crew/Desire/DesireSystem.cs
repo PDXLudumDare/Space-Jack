@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FarrokhGames.Inventory;
+
 
 public class DesireSystem : MonoBehaviour {
 	[SerializeField] Emote emoteBubble;
@@ -68,10 +70,10 @@ public class DesireSystem : MonoBehaviour {
         if (item == null) { return; }
         if (currentDesire != null && currentDesire.Name == item.Name){
             print("HAPPY!");
-            FulfillDesire(item.Points);
+            FulfillDesire();
         }else{
             print("SAD...");
-            LoseDesire(item.Points);
+            LoseDesire();
         }
     }
 
