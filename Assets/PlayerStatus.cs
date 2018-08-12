@@ -18,6 +18,8 @@ public class PlayerStatus : MonoBehaviour {
 
 	float timer = 0;
 	bool pauseMenuOpen = false;
+	bool gameLost = false;
+	bool gameWon = false;
 
 	//TODO Max security points
 
@@ -33,7 +35,7 @@ public class PlayerStatus : MonoBehaviour {
 	void Update(){
 		timer += Time.deltaTime;
 		DisplayTimer();
-		if (timer > timeUntilWin) {	
+		if (timer > timeUntilWin && !gameLost) {	
 			GameWin();
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)){
@@ -54,18 +56,20 @@ public class PlayerStatus : MonoBehaviour {
     public void ChangeSecurityPoints(int value){
 		securityPoints = securityPoints + value;
 		securityText.text = securityPoints.ToString();
-		if (securityPoints < 0){
+		if (securityPoints < 0 && !gameWon){
 			GameOver();
 		}
 	}
 
 	private void GameWin()
     {
+		gameWon = true;
         winMenu.SetActive(true);
     }
 
     private void GameOver()
     {
+		gameLost = true;
         loseMenu.SetActive(true);
     }
 
@@ -75,7 +79,7 @@ public class PlayerStatus : MonoBehaviour {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
     }
-	private void ClosePauseMenu()
+	public void ClosePauseMenu()
     {
 		pauseMenuOpen = false;
         Time.timeScale = 1f;
