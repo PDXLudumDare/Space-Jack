@@ -35,7 +35,8 @@ public class CrewSpawner : MonoBehaviour {
 
     private void SpawnCrewMember(Vector3 position)
     {
-        GameObject newCrewMemberObject = Instantiate(crewPrefab, position, Quaternion.identity, transform);
+        if (FindObjectsOfType<CrewAI>().Length > maxCrewSpawn){ return; }
+		GameObject newCrewMemberObject = Instantiate(crewPrefab, position, Quaternion.identity, transform);
 		newCrewMemberObject.GetComponentInChildren<HairRenderer>().GetComponent<SpriteRenderer>().sprite = 
 			possibleHair[UnityEngine.Random.Range(0, possibleHair.Length)];
 		newCrewMemberObject.GetComponentInChildren<HeadRenderer>().GetComponent<SpriteRenderer>().sprite = 

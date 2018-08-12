@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using FarrokhGames.Inventory;
 
 [RequireComponent(typeof(InventoryRenderer))]
 public class InventoryCreator : MonoBehaviour
