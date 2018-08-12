@@ -9,8 +9,6 @@ public class DesireSystem : MonoBehaviour {
 	[SerializeField] Sprite happyIcon;
 	[SerializeField] Sprite angryIcon;
 	[SerializeField] float destroyEmoteTime = 3f;
-    [SerializeField] int securityCost = 5;
-    [SerializeField] int securityGain = 10;
 
 	public IInventoryItem currentDesire;
 
@@ -28,15 +26,15 @@ public class DesireSystem : MonoBehaviour {
         CreateEmote(currentDesire.Sprite);
     }
 
-	public void LoseDesire(){
-        status.ChangeSecurityPoints(-securityCost);
+	public void LoseDesire(int penalty = 1){
+        status.ChangeSecurityPoints(-penalty);
 		currentDesire = null;
 		DestroyCurrentEmote();
 		StartCoroutine(ActivateTempBubble(angryIcon));
 	}
             
     public void FulfillDesire(int reward = 1){
-        status.ChangeSecurityPoints(securityGain);
+        status.ChangeSecurityPoints(reward);
         currentDesire = null;
         DestroyCurrentEmote();
 		StartCoroutine(ActivateTempBubble(happyIcon));
@@ -74,7 +72,7 @@ public class DesireSystem : MonoBehaviour {
             FulfillDesire(item.Points);
         }else{
             print("SAD...");
-            LoseDesire();
+            LoseDesire(item.Points);
         }
     }
 }
