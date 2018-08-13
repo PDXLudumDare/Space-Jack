@@ -153,10 +153,6 @@ MonoBehaviour:
   beamSFX: {fileID: 8300000, guid: 26673d3ae39aec6428ad02dff2fce29b, type: 3}
   possibleHair:
   - {fileID: 21300000, guid: a47990576cede7c4ea43569e260be3eb, type: 3}
-  - {fileID: 21300000, guid: 5233d106c02327f488236193836eb802, type: 3}
-  - {fileID: 21300000, guid: f7175604924e9474d95bbd2b578b3c5a, type: 3}
-  possibleHead:
-  - {fileID: 21300000, guid: be5ef6e856a2a6c428c4ad87996a94d3, type: 3}
   - {fileID: 21300000, guid: abbd4cc94de443a438b00341478ec7fe, type: 3}
   - {fileID: 21300000, guid: 9183349b4cc6d1e449f87a92ce774bc0, type: 3}
   - {fileID: 21300000, guid: 957323ade580c7f4a8ab2a951449aa81, type: 3}
@@ -202,6 +198,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ca9c45604aeb99745be1fb77e973f617, type: 3}
   - {fileID: 21300000, guid: ae2c6426ff44c8b4d82f3bff2a8a3e76, type: 3}
   - {fileID: 21300000, guid: e99eccb076525e14ebaef49775335c37, type: 3}
+  possibleHead:
+  - {fileID: 21300000, guid: be5ef6e856a2a6c428c4ad87996a94d3, type: 3}
+  - {fileID: 21300000, guid: f7175604924e9474d95bbd2b578b3c5a, type: 3}
+  - {fileID: 21300000, guid: 5233d106c02327f488236193836eb802, type: 3}
   possibleBody:
   - {fileID: 21300000, guid: a2c10de38e825684ebf91adfa539d246, type: 3}
   - {fileID: 21300000, guid: 3121d60f4fbfe884692a6d4466f07cf2, type: 3}

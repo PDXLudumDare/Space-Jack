@@ -15,13 +15,18 @@ public class DesireSystem : MonoBehaviour {
 	[SerializeField] float destroyEmoteTime = 3f;
     [SerializeField] Vector3 emoteOffset;
 
+    [SerializeField] AudioClip happySFX;
+    [SerializeField] AudioClip madSFX;
+ 
 	public IInventoryItem currentDesire;
 
 	Emote currentEmote;
     PlayerStatus status;
+    AudioSource audioSource;
 
     void Start(){
         status = FindObjectOfType<PlayerStatus>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 	public void CreateDesire()
@@ -32,6 +37,7 @@ public class DesireSystem : MonoBehaviour {
     }
 
 	public void LoseDesire(int penalty = 1){
+        audioSource.PlayOneShot(madSFX);
         status.ChangeSecurityPoints(-penalty);
 		currentDesire = null;
 		DestroyCurrentEmote();
@@ -39,6 +45,7 @@ public class DesireSystem : MonoBehaviour {
 	}
             
     public void FulfillDesire(int reward = 1){
+        audioSource.PlayOneShot(happySFX);
         status.ChangeSecurityPoints(reward);
         currentDesire = null;
         DestroyCurrentEmote();

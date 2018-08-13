@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 43564458b8a23074b9289d642065744e, type: 3}
   _shape:
-    _width: 2
-    _height: 2
-    _shape: 01010101
-  points: 0
+    _width: 1
+    _height: 1
+    _shape: 01
+  points: 50
