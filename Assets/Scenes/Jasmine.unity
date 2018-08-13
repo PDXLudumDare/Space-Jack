@@ -4106,7 +4106,7 @@ Prefab:
     - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
         type: 2}
       propertyPath: itemsToSpawn.Array.size
-      value: 11
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224414904534045838, guid: e2bdbf75222e7a84c995890194dfb929,
         type: 2}
@@ -4242,7 +4242,7 @@ Prefab:
         type: 2}
       propertyPath: itemsToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 669f137a2a36cef4b8c9e00f6d6a4cc1,
+      objectReference: {fileID: 11400000, guid: 9b3a1adfa454dbe4c898d4483e519997,
         type: 2}
     - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
         type: 2}
@@ -4304,6 +4304,26 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 8269c82667f474d4d90b2723bb5b446b,
         type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: timebetweenSpawnRange.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: timebetweenSpawnRange.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: costOfDestroyedItems
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157114239238266, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: timeUntilWin
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2bdbf75222e7a84c995890194dfb929, type: 2}
   m_IsPrefabAsset: 0
