@@ -9,7 +9,7 @@ public class CrewSpawner : MonoBehaviour {
 	public float timeBetweenSpawns = 30f;
 
 	public GameObject crewPrefab;
-	public AudioClip beamSound;
+	public AudioClip beamSFX;
 
 	public Sprite[] possibleHair;
 	public Sprite[] possibleHead;
@@ -18,10 +18,12 @@ public class CrewSpawner : MonoBehaviour {
 	Waypoint[] spawnWaypoints;
 	int numberOfSpawns = 0;
 	float timeSinceLastSpawn;
+	AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
 		spawnWaypoints = FindObjectsOfType<Waypoint>();
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +40,7 @@ public class CrewSpawner : MonoBehaviour {
 
     private void SpawnCrewMember(Vector3 position)
     {
+		audioSource.PlayOneShot(beamSFX);
 		GameObject newCrewMemberObject = Instantiate(crewPrefab, position, Quaternion.identity, transform);
 		newCrewMemberObject.GetComponentInChildren<HairRenderer>().GetComponent<SpriteRenderer>().sprite = 
 			possibleHair[UnityEngine.Random.Range(0, possibleHair.Length)];
