@@ -1388,7 +1388,7 @@ Tilemap:
   - first: {x: -13, y: 2, z: 0}
     second:
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1577,10 +1577,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 46efa7bba165be641b50467f86e6b492, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 5f80698418b78d1498dacfec7f7829e7, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 5f80698418b78d1498dacfec7f7829e7, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 75
     m_Data:
@@ -3781,6 +3781,58 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d801af8b3a526a24f9ef6efa63cd8c39,
+        type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38ca7622b39ebfa4fa9bf09956532275,
+        type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53aa08504d5e9414a9a563dbd18bcd04,
+        type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ec294a71337717489c194984f9b18c6,
+        type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f47590862407ea45acc32afcac27209,
+        type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb916945a55dc0447a5a942c5ea986f1,
+        type: 2}
+    - target: {fileID: 114244954211883510, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: itemsToSpawn.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 93c3594afbd276f4bb7867ce35097471,
+        type: 2}
+    - target: {fileID: 114949966446851620, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: _width
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157114239238266, guid: e2bdbf75222e7a84c995890194dfb929,
+        type: 2}
+      propertyPath: securityPoints
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2bdbf75222e7a84c995890194dfb929, type: 2}
