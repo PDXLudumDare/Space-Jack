@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Wall Rule Tile
+  m_Name: Rules Wall
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 5f80698418b78d1498dacfec7f7829e7, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: af34448b0366f6d4189325e94cbeac3d, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Neighbors: 0000000001000000000000000100000001000000000000000100000000000000
