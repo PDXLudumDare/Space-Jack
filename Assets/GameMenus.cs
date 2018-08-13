@@ -10,6 +10,7 @@ public class GameMenus : MonoBehaviour {
 	[SerializeField] int firstLevelIndex = 0;
 
 	int buildIndex;
+	bool isMute = false;
 
 	void Start(){
 		buildIndex = SceneManager.GetActiveScene().buildIndex;
@@ -41,7 +42,8 @@ public class GameMenus : MonoBehaviour {
 		print("LOAD CREDITS");
 	}
 
-	public void ToggleVolumen(){
-		print("TOGGLE VOLUME");
+	public void ToggleVolume(){
+		isMute = ! isMute;
+     	AudioListener.volume =  isMute ? 0 : 1;
 	}
 }
