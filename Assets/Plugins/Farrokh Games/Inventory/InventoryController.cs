@@ -15,6 +15,10 @@ namespace FarrokhGames.Inventory
         IEndDragHandler, IPointerExitHandler, IPointerEnterHandler
         {
             
+            public AudioClip pickupSFX;
+            public AudioClip dropSFX;
+            AudioSource audioSource;
+
             // The dragged item is static and shared by all controllers
             // This way items can be moved between controllers easily
             private static DraggedItem _draggedItem = null;
@@ -27,7 +31,9 @@ namespace FarrokhGames.Inventory
              * Setup
              */
             void Awake()
+
             {
+                audioSource = GetComponent<AudioSource>();
                 _renderer = GetComponent<InventoryRenderer>();
                 if (_renderer == null) { throw new NullReferenceException("Could not find a renderer. This is not allowed!"); }
             }
@@ -39,6 +45,7 @@ namespace FarrokhGames.Inventory
             {
                 if (_draggedItem == null)
                 {
+                    audioSource.PlayOneShot(pickupSFX);
                     // Get which item to drag (item will be null of none were found)
                     var grid = ScreenToGrid(eventData.position);
                     _itemToDrag = _inventory.GetAtPoint(grid);
@@ -80,6 +87,7 @@ namespace FarrokhGames.Inventory
                 {
                     // Update the items position
                     _draggedItem.Position = eventData.position;
+
                 }
             }
 
@@ -90,6 +98,7 @@ namespace FarrokhGames.Inventory
             {
                 if (_draggedItem != null)
                 {
+                    audioSource.PlayOneShot(dropSFX);
                     _draggedItem.Drop(eventData.position);
                     _draggedItem = null;
                 }
