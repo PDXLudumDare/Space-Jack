@@ -535,7 +535,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -707,6 +707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c3665acf72a44079b74bdede391c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSFX: {fileID: 8300000, guid: 1d0df14af28bd2f488a3bba830df99bd, type: 3}
+  dropSFX: {fileID: 8300000, guid: 5e710ed55cac855448ade25b1c4f0f90, type: 3}
 --- !u!114 &114049414641691458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -763,7 +765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   securityPoints: 100
   securityText: {fileID: 114725030157301354}
-  timeUntilWin: 10
+  timeUntilWin: 100
   displayMultiplier: 100
   timerDisplay: {fileID: 114559657017887046}
   winMenu: {fileID: 1190771650088496}
