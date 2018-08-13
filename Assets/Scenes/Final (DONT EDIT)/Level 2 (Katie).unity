@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupSFX: {fileID: 8300000, guid: 1d0df14af28bd2f488a3bba830df99bd, type: 3}
-  dropSFX: {fileID: 8300000, guid: 5e710ed55cac855448ade25b1c4f0f90, type: 3}
+  dropSFX: {fileID: 8300000, guid: 25597798d1eadf6428e4467d7727c7c4, type: 3}
 --- !u!114 &191624452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -92}
-  m_SizeDelta: {x: 206.2, y: 76.8}
+  m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785241769
 MonoBehaviour:
