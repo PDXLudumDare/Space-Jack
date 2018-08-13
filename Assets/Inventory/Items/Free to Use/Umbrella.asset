@@ -9,10 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92e9099dba1c24dcda700fa19b64a47b, type: 3}
-  m_Name: Rock
+  m_Name: Umbrella
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: c79b82bfe124e084c96ae1ab60a02e1c, type: 3}
+  _sprite: {fileID: 21300000, guid: 6b0fe04e57c17104f962145b9578ce8d, type: 3}
   _shape:
-    _width: 1
-    _height: 1
-    _shape: 01
+    _width: 3
+    _height: 2
+    _shape: 010101000100
+  points: 0

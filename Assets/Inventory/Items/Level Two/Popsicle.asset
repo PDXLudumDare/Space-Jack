@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92e9099dba1c24dcda700fa19b64a47b, type: 3}
-  m_Name: Gummy Bear
+  m_Name: Popsicle
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 97827aa6cceece046895184b81151788, type: 3}
+  _sprite: {fileID: 21300000, guid: 78bc92d404ce3a447879d7bbbaa8ed98, type: 3}
   _shape:
     _width: 1
     _height: 1
-    _shape: 00010101
-  points: 0
+    _shape: 01
+  points: 15
